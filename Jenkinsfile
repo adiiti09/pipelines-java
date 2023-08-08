@@ -29,28 +29,5 @@ pipeline {
             }
 
         }
-
-        stage ('Deploy') {
-
-            steps {
-                echo "deploy stage"
-                deploy adapters: [tomcat9 (
-                        credentialsId: 'tomcat_deploy_ui',
-                        path: '',
-                        url: 'http://20.51.175.126:8088'
-                    )],
-                    contextPath: 'servletjar11111',
-                    onFailure: 'false',
-                    war: '**/*.war'
-            }
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.war'
-                }
-            }
-        }
     }
 }
