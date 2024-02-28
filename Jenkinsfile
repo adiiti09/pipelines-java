@@ -7,7 +7,7 @@ pipeline {
             
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/adiiti09/pipelines-java.git'
 
              }
