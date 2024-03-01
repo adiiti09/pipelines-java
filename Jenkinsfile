@@ -3,7 +3,7 @@ pipeline {
 
     stages {
          
-        stage('Checkout') {
+        stage('preparation') {
             
             steps {
                 // Get some code from a GitHub repository
