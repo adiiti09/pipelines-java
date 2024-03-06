@@ -36,11 +36,20 @@ pipeline {
             }
 
         }
-        stage ('Email config') {
+        stage ('Deploy') {
 
-        steps {
-            mail bcc: '', body: 'Build success!', cc: '', from: '', replyTo: '', subject: 'Jenkins build status', to: 'aditianant2001@gmail.com'
-        }
+            steps {
+                echo "deploy stage"
+                deploy adapters: [tomcat9 (
+                        credentialsId: 'tomcat_deploy_ui',
+                        path: '',
+                        url: 'http://20.62.99.46:8080/'
+                    )],
+                    contextPath: 'helloworld-app',
+                    onFailure: 'false',
+                    war: '**/*.war'
+            }
+
     }
 
     }
