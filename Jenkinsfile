@@ -43,7 +43,7 @@ pipeline {
                 deploy adapters: [tomcat9 (
                         credentialsId: 'tomcat_deploy_ui',
                         path: '',
-                        url: 'http://20.62.99.46:8080/'
+                        url: 'http://13.91.97.254:8081/'
                     )],
                     contextPath: 'helloworld-app',
                     onFailure: 'false',
