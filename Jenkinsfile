@@ -13,17 +13,7 @@ pipeline {
              }
         }
 
-        stage ('Test') {
-
-            steps {
-                // Run Maven on a Unix agent.
-                sh "mvn surefire-report:report"
-                
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-
-        }
+        
 
         stage ('Build') {
 
@@ -31,6 +21,17 @@ pipeline {
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+        }
+        stage ('Test') {
+
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn surefire-report:report"
+                
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
