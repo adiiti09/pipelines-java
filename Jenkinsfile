@@ -46,7 +46,7 @@ pipeline {
                         path: '',
                         url: 'http://13.82.169.108:8081/'
                     )],
-                    contextPath: 'Aditi-app',
+                    contextPath: 'Aditi',
                     onFailure: 'false',
                     war: '**/*.war'
             }
