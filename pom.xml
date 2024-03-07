@@ -5,7 +5,7 @@
   <artifactId>helloworld</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Hello world sample web app</name>
+  <name>Aditi</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -18,7 +18,7 @@
   </dependencies>
 
   <build>
-    <finalName>helloworld</finalName>
+    <finalName>aditi</finalName>
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
